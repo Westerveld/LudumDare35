@@ -14,8 +14,10 @@ public class Snake : MonoBehaviour {
     public Transform borderRight;
 
     public float speed;
-    Vector2 dir = Vector2.right;
+    public static Vector2 dir = Vector2.right;
     bool ate = false;
+
+
     public GameObject tailprefab;
     List<Transform> tail = new List<Transform>();
 
