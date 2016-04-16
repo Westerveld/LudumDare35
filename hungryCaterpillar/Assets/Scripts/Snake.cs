@@ -48,13 +48,11 @@ public class Snake : MonoBehaviour {
         transform.Translate(dir);
         if (ate)
         {
-            GameObject g = (GameObject)Instantiate(tailprefab, v, Quaternion.identity);
+            GameObject g = (GameObject)Instantiate(tailprefab, v, /*Rotation.currAngle*/ Quaternion.identity);
             tail.Insert(0, g.transform);
             ate = false;
 
-        }
-        if (tail.Count > 0)
-        {
+        } else if (tail.Count > 0) {
             tail.Last().position = v;
             tail.Insert(0, tail.Last());
             tail.RemoveAt(tail.Count() - 1);
@@ -63,11 +61,14 @@ public class Snake : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Food")
-        {
+        if (coll.tag == "Food") {
             ate = true;
             Destroy(coll.gameObject);
             Spawn();
+            GameManager.Score++;
+        }
+        if(coll.tag == "Enemy" ||coll.tag == "Wall") {
+            GameManager.endGame();
         }
     }
 

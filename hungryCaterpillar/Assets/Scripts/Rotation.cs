@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Rotation : MonoBehaviour {
 
+    public static Quaternion currAngle;
 	// Use this for initialization
 	void Start () {
 	
@@ -35,5 +36,8 @@ public class Rotation : MonoBehaviour {
             left.eulerAngles = new Vector3(0, 0, 180);
             transform.rotation = left;
         }
+
+        currAngle.eulerAngles = transform.rotation.eulerAngles;
+        Debug.Log(currAngle.eulerAngles);
 	}
 }
