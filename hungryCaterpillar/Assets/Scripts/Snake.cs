@@ -5,14 +5,7 @@ using System.Linq;
 
 public class Snake : MonoBehaviour {
 
-    public GameObject food;
-
-    //borders
-    public Transform borderTop;
-    public Transform borderBottom;
-    public Transform borderLeft;
-    public Transform borderRight;
-
+    
     public float speed;
     public static Vector2 dir = Vector2.right;
     bool ate = false;
@@ -24,7 +17,6 @@ public class Snake : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         InvokeRepeating("Movement", 0.3f, speed);
-        Spawn();
 	}
 	
 	// Update is called once per frame
@@ -51,7 +43,6 @@ public class Snake : MonoBehaviour {
             GameObject g = (GameObject)Instantiate(tailprefab, v, /*Rotation.currAngle*/ Quaternion.identity);
             tail.Insert(0, g.transform);
             ate = false;
-
         } else if (tail.Count > 0) {
             tail.Last().position = v;
             tail.Insert(0, tail.Last());
@@ -64,7 +55,6 @@ public class Snake : MonoBehaviour {
         if (coll.tag == "Food") {
             ate = true;
             Destroy(coll.gameObject);
-            Spawn();
             GameManager.Score++;
         }
         if(coll.tag == "Enemy" ||coll.tag == "Wall") {
@@ -72,11 +62,4 @@ public class Snake : MonoBehaviour {
         }
     }
 
-    void Spawn()
-    {
-        int x = (int)Random.Range(borderLeft.position.x, borderRight.position.x);
-        int y = (int)Random.Range(borderBottom.position.y, borderTop.position.y);
-
-        Instantiate(food, new Vector2(x, y), Quaternion.identity);
-    }
 }
