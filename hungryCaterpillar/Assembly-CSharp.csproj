@@ -45,39 +45,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\AI.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\GridPlayer.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\GridPlayer2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\Lines.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SearchPlayerAI.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SetGrid.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SimpleAI.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SimpleAI2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\TDEnemy.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\TDManager.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\WaypointPlayer.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\DynamicMapUpdate.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\DynamicTDGridObject.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Node.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\NodeSearch.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinder.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinder2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinding.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinding2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\QueuePath.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\WaypointListNode.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\WaypointNode.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\WaypointPathfinder.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
      <Compile Include="Assets\Scripts\Snake.cs" />
      <Compile Include="Assets\Scripts\enemyBehaviour.cs" />
+     <Compile Include="Assets\Scripts\enemyRotation.cs" />
+     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.shader" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\Readme_upgrading.txt" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\Readme.txt" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
+     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
+     <None Include="Assets\Plugins\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity5.3.4/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Program Files/Unity5.3.4/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>D:/Games/Ludum/hungryCaterpillar/Assets/Plugins/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>D:/Games/Ludum/hungryCaterpillar/Assets/Plugins/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1618E33D-0511-0BBF-D976-EE93AD07E97F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
