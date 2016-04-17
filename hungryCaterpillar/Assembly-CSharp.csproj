@@ -47,7 +47,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
+     <Compile Include="Assets\Scripts\RotationPlayer.cs" />
      <Compile Include="Assets\Scripts\Snake.cs" />
+     <Compile Include="Assets\Scripts\SnakePlayer2.cs" />
      <Compile Include="Assets\Scripts\enemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\enemyRotation.cs" />
      <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.shader" />

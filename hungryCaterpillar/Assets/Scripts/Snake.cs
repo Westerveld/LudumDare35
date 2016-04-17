@@ -5,10 +5,16 @@ using System.Linq;
 
 public class Snake : MonoBehaviour {
 
-    
+    public KeyCode up;
+    public KeyCode down;
+    public KeyCode right;
+    public KeyCode left;
+
     public float speed;
     public static Vector2 dir = Vector2.right;
     bool ate = false;
+
+    public static int health;
 
 
     public GameObject tailprefab;
@@ -21,13 +27,13 @@ public class Snake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.RightArrow) && dir != -Vector2.right) {
+        if (Input.GetKey(right) && dir != -Vector2.right) {
             dir = Vector2.right;
-        } else if (Input.GetKey(KeyCode.UpArrow) && dir != -Vector2.up) {
+        } else if (Input.GetKey(up) && dir != -Vector2.up) {
             dir = Vector2.up;
-        } else if (Input.GetKey(KeyCode.DownArrow) && dir != Vector2.up) {
+        } else if (Input.GetKey(down) && dir != Vector2.up) {
             dir = -Vector2.up;
-        } else if (Input.GetKey(KeyCode.LeftArrow) && dir != Vector2.right) {
+        } else if (Input.GetKey(left) && dir != Vector2.right) {
             dir = -Vector2.right;
         }
 	}
@@ -58,7 +64,7 @@ public class Snake : MonoBehaviour {
             GameManager.Score++;
         }
         if(coll.tag == "Enemy" ||coll.tag == "Wall") {
-            GameManager.endGame();
+            health--;
         }
     }
 

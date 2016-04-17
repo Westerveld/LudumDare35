@@ -133,6 +133,8 @@ public class enemyBehaviour : MonoBehaviour {
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
         dir *= speed * Time.fixedDeltaTime;
         Vector2 v = transform.position;
+        v.x += 0.1f;
+        v.y += 0.1f;
         rb.AddForce(dir, fMode);
         if (ate)
         {

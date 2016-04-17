@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
     public static int Score;
     public Text scoreLabel;
+    public static int Score2;
+    public Text score2Label;
 
     public GameObject food;
     //borders
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         InvokeRepeating("Spawn", 3f, 2f);
         Score = 0;
+        Score2 = 0;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour {
     void FixedUpdate()
     {
         scoreLabel.text = "Score: " + Score;
+        score2Label.text = "Score: " + Score2;
     }
 
     public static void endGame()
