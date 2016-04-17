@@ -3,39 +3,35 @@ using System.Collections;
 
 public class RotationPlayer : MonoBehaviour {
 
-    public KeyCode up;
-    public KeyCode down;
-    public KeyCode right;
-    public KeyCode left;
     public static Quaternion currAngle;
 
 	// Use this for initialization
     void Update()
     {
-        if (Input.GetKey(right) && SnakePlayer2.dir == Vector2.right)
+        if (SnakePlayer2.dir == Vector2.right)
         {
-            Quaternion right1 = new Quaternion();
-            right1.eulerAngles = new Vector3(0, 0, 180);
-            transform.rotation = right1;
+            Quaternion right = new Quaternion();
+            right.eulerAngles = new Vector3(0, 0, 180);
+            transform.rotation = right;
 
         }
-        else if (Input.GetKey(up) && SnakePlayer2.dir == Vector2.up)
+        else if (SnakePlayer2.dir == Vector2.up)
         {
-            Quaternion up1 = new Quaternion();
-            up1.eulerAngles = new Vector3(0, 0, -90);
-            transform.rotation = up1;
+            Quaternion up = new Quaternion();
+            up.eulerAngles = new Vector3(0, 0, -90);
+            transform.rotation = up;
         }
-        else if (Input.GetKey(down) && SnakePlayer2.dir == -Vector2.up)
+        else if (SnakePlayer2.dir == -Vector2.up)
         {
-            Quaternion down1 = new Quaternion();
-            down1.eulerAngles = new Vector3(0, 0, 90);
-            transform.rotation = down1;
+            Quaternion down = new Quaternion();
+            down.eulerAngles = new Vector3(0, 0, 90);
+            transform.rotation = down;
         }
-        else if (Input.GetKey(left) && SnakePlayer2.dir == -Vector2.right)
+        else if (SnakePlayer2.dir == -Vector2.right)
         {
-            Quaternion left1 = new Quaternion();
-            left1.eulerAngles = new Vector3(0, 0, 0);
-            transform.rotation = left1;
+            Quaternion left = new Quaternion();
+            left.eulerAngles = new Vector3(0, 0, 0);
+            transform.rotation = left;
         }
 
         currAngle.eulerAngles = transform.rotation.eulerAngles;

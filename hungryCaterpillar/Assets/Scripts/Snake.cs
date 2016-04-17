@@ -16,7 +16,6 @@ public class Snake : MonoBehaviour {
 
     public static int health;
 
-
     public GameObject tailprefab;
     List<Transform> tail = new List<Transform>();
 
@@ -58,13 +57,18 @@ public class Snake : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Food") {
+        if (coll.gameObject.tag == "Food") {
             ate = true;
             Destroy(coll.gameObject);
             GameManager.Score++;
         }
-        if(coll.tag == "Enemy" ||coll.tag == "Wall") {
+        if(coll.gameObject.tag == "player2Body") {
             health--;
+        }
+        if (coll.gameObject.tag == "Wall")
+        {
+            health--;
+            dir = -dir;
         }
     }
 
