@@ -16,6 +16,9 @@ public class Snake : MonoBehaviour {
 
     public static int health;
 
+    public GameObject[] life;
+    public GameObject[] noLife;
+
     public GameObject tailprefab;
     List<Transform> tail = new List<Transform>();
 
@@ -63,11 +66,22 @@ public class Snake : MonoBehaviour {
             GameManager.Score++;
         }
         if(coll.gameObject.tag == "player2Body") {
-            health--;
+            GameManager.player1Life--;
+            life[GameManager.player1Life].SetActive(false);
+            noLife[GameManager.player2Life].SetActive(true);
         }
         if (coll.gameObject.tag == "Wall")
         {
-            health--;
+            GameManager.player1Life--;
+            life[GameManager.player1Life].SetActive(false);
+            noLife[GameManager.player1Life].SetActive(true);
+            dir = -dir;
+        }
+        if (coll.gameObject.tag == "Rock")
+        {
+            GameManager.player1Life--;
+            life[GameManager.player1Life].SetActive(false);
+            noLife[GameManager.player1Life].SetActive(true);
             dir = -dir;
         }
     }

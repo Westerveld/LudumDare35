@@ -13,7 +13,9 @@ public class SnakePlayer2 : MonoBehaviour
     public float speed;
     public static Vector2 dir = -Vector2.right;
     bool ate = false;
-    public static int health;
+
+    public GameObject[] life;
+    public GameObject[] noLife;
 
     public GameObject tailprefab;
     List<Transform> tail = new List<Transform>();
@@ -67,12 +69,27 @@ public class SnakePlayer2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Food") {
+        if (coll.gameObject.tag == "Food") {
             ate = true;
             Destroy(coll.gameObject);
             GameManager.Score2++;
-        } if (coll.tag == "Player2" || coll.tag == "Wall") {
-            health--;
+        } if (coll.gameObject.tag == "Wall") {
+            GameManager.player2Life--;
+            life[GameManager.player2Life].SetActive(false);
+            noLife[GameManager.player2Life].SetActive(true);
+            dir = -dir;
+        } if (coll.gameObject.tag == "player1Body")
+        {
+            GameManager.player2Life--;
+            life[GameManager.player2Life].SetActive(false);
+            noLife[GameManager.player2Life].SetActive(true);
+        }
+        if (coll.gameObject.tag == "Rock")
+        {
+            GameManager.player2Life--;
+            life[GameManager.player2Life].SetActive(false);
+            noLife[GameManager.player2Life].SetActive(true);
+            dir = -dir;
         }
     }
 
