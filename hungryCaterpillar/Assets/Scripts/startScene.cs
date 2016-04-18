@@ -21,7 +21,6 @@ public class startScene : MonoBehaviour {
 
     public void showWebsites()
     {
-        Application.ExternalEval("window.open('http://www.jamesredler.com','_blank'");
-        Application.ExternalEval("window.open('http://www.bruins-tech.co.uk','_blank'");
+
     }
 }

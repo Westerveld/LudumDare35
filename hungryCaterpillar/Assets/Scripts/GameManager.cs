@@ -34,8 +34,14 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (player1Life == 0 || player2Life == 0)
+        if (player1Life == 0)
         {
+            Score2 += 10;
+            endGame();
+        }
+        if (player2Life == 0)
+        {
+            Score += 10;
             endGame();
         }
         if ((Score - Score2) >= 20)
