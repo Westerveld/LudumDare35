@@ -57,6 +57,14 @@ public class GameManager : MonoBehaviour {
 
     public static void endGame()
     {
+        if (player1Life == 0)
+        {
+            Score2 += 10;
+        }
+        else if (player2Life == 0)
+        {
+            Score += 10;
+        }
         SceneManager.LoadScene("end");
     }
 
